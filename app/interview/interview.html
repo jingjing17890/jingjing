@@ -1,0 +1,120 @@
+<div class="interview-wrap common-wrap">
+    <h1 class="shine-title">面试管理</h1>
+    <div class="interview-tabs">
+        <ul>
+            <li ng-class="{active: tabState == 1}" ng-click="switchTab(1)">待HR联系</li>
+            <li ng-class="{active: tabState == 2}" ng-click="switchTab(2)">面试中</li>
+            <li ng-class="{active: tabState ==3}" ng-click="switchTab(3)">面试完成</li>
+        </ul>
+    </div>
+    <div class="select-wrap">
+        <div class="select-resume fl mr38">
+            <span class="fl">关键字：</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-resume fl mr38">
+            <span class="fl">学历：</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-resume fl">
+            <span class="fl title-left">工作年限：</span>
+            <div class="search_resume_box fl mg0" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox w200">3-5年<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+        </div>
+        <div class="search-btn shine-left" ng-click="show()"></div>
+    </div>
+<!--  <div class="interview-table">
+        <table class="table">
+        <thead>
+            <tr class="active">
+            <th>
+                <div class="checkboxe">
+                    <input class="select-all" type="checkbox" ng-model="checkboxes.checked" value="" id="checkboxPoolAll" name="" />
+                    <label for="checkboxPoolAll"></label>全选
+                </div>
+            </th>
+            <th>岗位名称</th>
+            <th>发布部门</th>
+            <th>发布日期</th>
+            <th>结束日期</th>
+            <th>状态</th>
+            <th>简历数量</th>
+            <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="interviewStr in interviewStrs">
+                <td>
+                   <div class="checkboxe">
+                        <input type="checkbox" ng-model="checkboxes.ids[interviewStr.id]" value="" id="{{'checkboxPool_'+$index+1}}" name="" />
+                        <label for="{{'checkboxPool_'+$index+1}}" class="child"></label>
+                    </div>
+                </td> 
+                <td>{{interviewStr.name}}</td> 
+                <td>{{interviewStr.starttime}}</td> 
+                <td>{{interviewStr.endtime}}</td> 
+                <td>{{interviewStr.status}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>
+                    <a>编辑</a>
+                    <a>查看</a>
+                    <a>重新申请</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+ <uib-pagination total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页" max-size="5" ng-change="pageChanged()"></uib-pagination>
+</div> -->
+<div class="common-table">
+    <table class="table table-title" style="table-layout: fixed;">
+        <tbody>
+            <tr class="active">
+                <td width="76">
+                    <div class="checkboxe">
+                        <input class="select-all" type="checkbox" ng-model="checkboxes.checked" value="" id="checkboxPoolAll" name="" />
+                        <label for="checkboxPoolAll"></label>全选
+                    </div>
+                </td>
+                <td>岗位名称</td>
+                <td>发布部门</td>
+                <td>发布日期</td>
+                <td>结束日期</td>
+                <td>状态</td>
+                <td>简历数量</td>
+                <td>简历数量</td>
+                <td>简历数量</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table" ng-repeat="interviewStr in interviewStrs" style="table-layout: fixed;">
+        <tbody>
+            <tr>
+                <td width="76">
+                    <div class="checkboxe">
+                        <input type="checkbox" ng-model="checkboxes.ids[interviewStr.id]" value="" id="{{'checkboxPool_'+$index+1}}" name="" />
+                        <label for="{{'checkboxPool_'+$index+1}}" class="child"></label>
+                    </div>
+                </td>
+                <td>{{interviewStr.name}}</td> 
+                <td>{{interviewStr.starttime}}</td> 
+                <td>{{interviewStr.endtime}}</td> 
+                <td>{{interviewStr.status}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+<uib-pagination class="my-page" total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页" max-size="5" ng-change="pageChanged()"></uib-pagination>
+</div>
+</div>

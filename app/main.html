@@ -1,0 +1,228 @@
+<div class="main_wrap bg-none">
+<div class="common-wrap">
+  <h1 class="shine-title">待办事项</h1>
+  <div class="row main-box">
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-1"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-2"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-3"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-4"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-5"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+    <div class="col-md-2">
+       <div class="common-box">
+        <div class="img img-6"></div>
+        <div class="shine-right">
+          <p class="shine-size-16">招聘申请</p>
+          <p class="shine-size-40">9</p>
+        </div>
+        </div>
+    </div> 
+  </div>
+</div>
+<div class="row main-list">
+  <div class="col-md-6 first">
+     <div class="message">
+       <h1 class="shine-title">消息
+          <a class="shine-right orange f12">more></a>
+       </h1>
+       <ul>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+         <li>大数据中心，发布了新的招聘申请，请尽快处理~<span class="shine-right">2017-6-1</span></li>
+      </ul>
+     </div>
+     <div class="publish">
+       <h1 class="shine-title">发布招聘岗位</h1>
+       <div class="publish-area">
+          <div class="intro-title">选择岗位模板：</div>
+          <div class="search_resume_box fit-search" ng-init="isCollapsed = false" ng-click="isCollapsed= !isCollapsed">
+            <div class="search_resume_showbox">简历标记<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!isCollapsed" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+            <div class="confirm-btn common-position">确定</div>
+       </div>
+     </div>
+     <div class="point">
+       <h1 class="shine-title">积分</h1>
+       <div class="points-tabs interview-tabs">
+            <ul>
+                <li ng-class="{active: tabState == 1}" ng-click="switchTab(1)">部门积分</li>
+                <li ng-class="{active: tabState == 2}" ng-click="switchTab(2)">个人积分</li>
+                <li ng-class="{active: tabState ==3}" ng-click="switchTab(3)">部门积分管理</li>
+            </ul>
+        </div>
+        <div class="tabs-con" ng-show="tabState ==1">
+            <div class="radius-btn radius-position">查看详情</div>
+            <div class="con-top">
+                <span class="fl title-left">部门现有积分：</span><span class="fl f14 orange">5000</span>
+            </div>
+            <div class="con-bottom">
+                <span class="fl title-left">部门已用积分：</span><span class="fl f14">5000</span>
+            </div>
+            <div class="confirm-big-btn">申请充值</div>
+        </div>
+        <div class="tabs-con" ng-show="tabState ==2">
+            <div class="radius-btn radius-position">查看详情</div>
+            <div class="con-top">
+                <span class="fl title-left">个人现有积分：</span><span class="fl f14 orange">5000</span>
+            </div>
+            <div class="mt20"><a>快来赚取积分啦！</a></div>
+        </div>
+        <div class="tabs-con" ng-show="tabState ==3">
+            <div class="radius-btn radius-position">查看详情</div>
+            <div class="con-top">
+                <span class="fl title-left">全部部门现有积分：</span><span class="fl f14 orange">5000</span>
+            </div>
+            <div class="con-bottom">
+                <span class="fl title-left">全部部门已用积分：</span><span class="fl f14">5000</span>
+            </div>
+            <div class="">新的充值提醒：<a>查看</a></div>
+        </div>
+     </div>
+  </div>
+  <div class="col-md-6 second">
+    <div class="message">
+      <h1 class="shine-title">发布中的岗位</h1>
+      <div class="shine-table main-table">
+    <table class="table">
+        <thead>
+            <tr class="active">
+            <th>岗位名称</th>
+            <th>发布部门</th>
+            <th>发布日期</th>
+            <th>结束日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>产品1</td>
+            <td>23/11/2013</td>
+            <td>待发货</td>
+            <td>产品1</td>
+            </tr>
+            <tr>
+            <td>产品2</td>
+            <td>10/11/2013</td>
+            <td>发货中</td>
+            <td>产品2</td>
+        </tr>
+            <tr>
+            <td>产品3</td>
+            <td>20/10/2013</td>
+            <td>待确认</td>
+            <td>产品3</td>
+        </tr>
+        <tr>
+            <td>产品4</td>
+            <td>20/10/2013</td>
+            <td>已退货</td>
+            <td>产品4</td>
+        </tr>
+        <tr>
+            <td>产品4</td>
+            <td>20/10/2013</td>
+            <td>已退货</td>
+            <td>产品4</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    </div>
+    <div class="message">
+      <h1 class="shine-title">查看最新简历
+        <a class="shine-right orange f12">more></a>
+      </h1>
+      <div class="shine-table main-table">
+            <table class="table">
+                <thead>
+                    <tr class="active">
+                    <th>sss</th>
+                    <th>发布部门</th>
+                    <th>发布日期</th>
+                    <th>结束日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>产品1</td>
+                    <td>23/11/2013</td>
+                    <td>待发货</td>
+                    <td>产品1</td>
+                    </tr>
+                    <tr>
+                    <td>产品2</td>
+                    <td>10/11/2013</td>
+                    <td>发货中</td>
+                    <td>产品2</td>
+                </tr>
+                    <tr>
+                    <td>产品3</td>
+                    <td>20/10/2013</td>
+                    <td>待确认</td>
+                    <td>产品3</td>
+                </tr>
+                <tr>
+                    <td>产品4</td>
+                    <td>20/10/2013</td>
+                    <td>已退货</td>
+                    <td>产品4</td>
+                </tr>
+                <tr>
+                    <td>产品4</td>
+                    <td>20/10/2013</td>
+                    <td>已退货</td>
+                    <td>产品4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

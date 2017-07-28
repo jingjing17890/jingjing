@@ -1,0 +1,174 @@
+<div class="tab-menu">招聘管理  >  发布招聘岗位</div>
+<div class="interview-wrap">
+    <div class="interview-select">
+        <div class="select-out fl">
+            <span class="fl">请选择岗位模板</span>
+            <div class="search_resume_box fl" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox">简历完整度<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+            <div class="search-confirm fl">确定</div>
+        </div>
+        <div class="select-out fl">
+            <span class="fl">请选择部门</span>
+            <div class="search_resume_box fl" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox">简历完整度<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+            <div class="search-confirm fl">确定</div>
+        </div>
+    </div>
+    <div class="interview-box">
+        <form name="userForm" novalidate>
+        <div class="select-cell title" ng-show="pulish">
+            <span class="fl title-left">岗位模板：</span><span class="fl">产品经理</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">机构名称：</span><span class="fl two">阳光保险集团</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">机构代码：</span><span class="fl two">000001</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">部门名称：</span><span class="fl two">大数据中心</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">部门代码：</span><span class="fl two">000001</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">岗位名称：</span>
+            <span class="fl two">产品经理</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">岗位代码：</span><span class="fl two">123456</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">岗位编制：</span><span class="fl two">6人</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">在岗人数：</span><span class="fl two">4人</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">招聘人数：</span>
+            <span class="fl two">1人</span>
+            <input type="text" ng-model="filters.q" ng-required="true" name="jobName" class="search_showbox fl w30" ng-enter="searchResume()"><span class="fl ml6">人</span>
+        </div>
+        <div ng-if='!(userForm.jobName.$dirty || (userForm.jobName.$invalid && submitted))' class="space1"></div>
+        <ng-messages ng-if='userForm.jobName.$dirty || (userForm.jobName.$invalid && submitted)' for="userForm.jobName.$error" role="alert" class="space1">
+            <ng-message when="required" class="add-error">*招聘人数必填</ng-message>
+        </ng-messages>
+        <div class="select-cell">
+            <span class="fl title-left">职位发布地点：</span>
+            <span class="fl two">北京</span>
+            <div class="search_resume_box fl" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox w110">3-5年<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+            <div class="search_resume_box fl" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox w83">3-5年<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">工作地址：</span>
+            <span class="fl two">北京市朝阳区昆山大厦</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">学历：</span>
+            <span class="fl two">本科</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">工作年限：</span>
+            <span class="fl two">3-5年</span>
+            <div class="search_resume_box fl" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox w200">3-5年<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">专业：</span>
+            <span class="fl two">计算机相关专业</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">招聘公告标题：</span><span class="fl two">123456</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">手机招聘公告标题：</span><span class="fl two">123456</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">招聘截止日期：</span>
+            <span class="fl two">2017-07-27</span>
+          <!--  <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()"> -->
+            <div class="dropdown" style="display: inline-block; margin-left: -5px;width:150px;">
+                <a class="dropdown-toggle " id="dropdown1" role="button" data-toggle="dropdown" data-target="#">
+                    <div class="input-group">
+                        <input id="inductionDate" name="inductionDate" type="text" class="time_name1" data-ng-model="offerForm.inductionDate" placeholder="请输入入职时间" required style="width:162px;height:32px;" readonly>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <div  ng-show="sendOfferForm.inductionDate.$dirty && sendOfferForm.inductionDate.$invalid"  class=" error_msg">
+                            <p class="add-error" ng-show="sendOfferForm.inductionDate.$error.required">
+                                请输入入职时间
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <ul class="dropdown-menu">
+                    <datetimepicker id="timepicker1" data-ng-model="offerForm.inductionDate"  data-datetimepicker-config="{dropdownSelector: '#dropdown1', minView:'day', modelType:'YYYY-MM-DD'}" data-before-render="beforeRenderStartDate($view, $dates, $leftDate, $upDate, $rightDate)"/>
+                </ul>
+            </div>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">招聘要求：</span>
+            <textarea placeholder="最多可输入1000字" class="ehr_textarea" id="interviewerNote{{$index}}" name="interviewerNote{{$index}}"
+                                        ng-model="interview.interviewer[$index].interviewerNote" ng-maxlength=1000 maxlength="1000"></textarea>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">职位类别：</span>
+            <span class="fl two">产品经理/主管</span>
+            <jobtable ng-model="jobType" job-type-name="jobTypeName" on-change="getKeywords()"></jobtable>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">职位月薪：</span>
+            <span class="fl two">15K-20K</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl w30" ng-enter="searchResume()"><span class="fl ml6">K</span>
+            <span class="fl space">-</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl w30" ng-enter="searchResume()"><span class="fl ml6">K</span>
+        </div>
+        <div class="select-cell">
+            <span class="fl title-left">发放月薪：</span>
+             <span class="fl two">12月</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl w30" ng-enter="searchResume()"><span class="fl ml6">月</span>
+        </div>
+        <div class="box-foot">
+            <div class="search-confirm" ng-click="submit()">发布至HR专员审核</div>
+        </div>
+        <div class="box-foot grey" ng-show="see">
+            <div class="search-confirm fl">确定</div>
+            <div class="common-btn fl ml15">拒绝</div>
+        </div>
+        </form>
+    </div>
+</div>

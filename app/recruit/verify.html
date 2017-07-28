@@ -1,0 +1,53 @@
+<div class="tab-menu">招聘管理  >  招聘岗位审核</div>
+<div class="interview-wrap common-wrap">
+    <div class="select-wrap">
+        <div class="select-resume fl mr38">
+            <span class="fl">岗位名称：</span>
+            <input type="text" ng-model="filters.q" class="search_showbox fl" ng-enter="searchResume()">
+        </div>
+        <div class="select-resume fl">
+            <span class="fl title-left">发布状态：</span>
+            <div class="search_resume_box fl mg0" ng-init="resumeLevelShow = false" ng-mouseenter="showMenu('resumeLevelShow')" ng-mouseleave="hideMenu('resumeLevelShow')">
+                <div class="search_resume_showbox w200">3-5年<span class="select-btn"></span></div>
+                <ul id="resumeLevel" class="select_resume_option" uib-collapse="!resumeLevelShow" aria-expanded="false" aria-hidden="true">
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="" ng-click="selectFilter($event)">不限</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'high'" ng-click="selectFilter($event)">完整度高</li>
+                    <li ng-model="filters.resumeLevel" uib-btn-radio="'low'" ng-click="selectFilter($event)">完整度低</li>
+                </ul>
+            </div>
+        </div>
+        <div class="search-btn shine-left" ng-click="show()"></div>
+    </div>
+    <div class="common-table">
+    <table class="table table-title" style="table-layout: fixed;">
+        <tbody>
+            <tr class="active">
+                <td>岗位名称</td>
+                <td>发布部门</td>
+                <td>招聘人数</td>
+                <td>申请日期</td>
+                <td>结束日期</td>
+                <td>申请人</td>
+                <td>操作</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table" ng-repeat="interviewStr in interviewStrs" style="table-layout: fixed;">
+        <tbody>
+            <tr>
+                <td>{{interviewStr.name}}</td> 
+                <td>{{interviewStr.starttime}}</td> 
+                <td>{{interviewStr.endtime}}</td> 
+                <td>{{interviewStr.status}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>{{interviewStr.quantity}}</td> 
+                <td>
+                    <a>查看</a>
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+<uib-pagination class="my-page" total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页" max-size="5" ng-change="pageChanged()"></uib-pagination>
+</div>
+</div>

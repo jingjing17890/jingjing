@@ -1,0 +1,77 @@
+<div class="tab-menu">招聘管理  >  岗位模板</div>
+<div class="interview-wrap common-wrap">
+    <div class="select-wrap">
+        <i class="add-station fl ml15"></i><div class="common-btn fl ml15">添加新的岗位模版</div>
+    </div>
+    <div class="interview-table">
+        <table class="table">
+        <thead>
+            <tr class="active">
+            <th>岗位名称</th>
+            <th>发布部门</th>
+            <th>发布日期</th>
+            <th>结束日期</th>
+            <th>状态</th>
+            <th>简历数量</th>
+            <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>产品1</td>
+            <td>23/11/2013</td>
+            <td>待发货</td>
+            <td>产品1</td>
+            <td>23/11/2013</td>
+            <td>88</td>
+            <td>
+                <a>编辑</a>
+                <a>查看</a>
+                <a>重新申请</a>
+            </td>
+            </tr>
+            <tr>
+            <td>产品2</td>
+            <td>10/11/2013</td>
+            <td>发货中</td>
+            <td>产品2</td>
+            <td>10/11/2013</td>
+            <td>88</td>
+            <td>
+                <a>编辑</a>
+                <a>查看</a>
+                <a>重新申请</a>
+            </td>
+        </tr>
+            <tr>
+            <td>产品3</td>
+            <td>20/10/2013</td>
+            <td>待确认</td>
+            <td>产品3</td>
+            <td>20/10/2013</td>
+            <td>88</td>
+            <td>
+                <a>编辑</a>
+                <a>查看</a>
+                <a>重新申请</a>
+            </td>
+        </tr>
+            <tr>
+            <td>产品4</td>
+            <td>20/10/2013</td>
+            <td>已退货</td>
+            <td>产品4</td>
+            <td>20/10/2013</td>
+            <td>88</td>
+            <td>
+                <a>编辑</a>
+                <a>查看</a>
+                <a>重新申请</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+   <pagination total-items="vm.totalItems" ng-model="vm.currentPage" ng-change="vm.pageChanged()"
+                previous-text="上一页" next-text="下一页" max-size="5"></pagination>
+</div>

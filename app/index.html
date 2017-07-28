@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/metroStyle/metroStyle.css"/>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="lib/angular-bootstrap/ui-bootstrap-csp.css"/>
+  <link rel="stylesheet" href="lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+</head>
+<body ng-app="myApp">
+  <div class="shine-navbar">
+    <div class="shine-collapse">
+      <div class="navbar-top">
+          <div class="navbar-logo">
+      　    <a href="##" class="navbar-logo-brand"><img src="img/logo.svg"></a>
+      　   </div>
+          <ul class="shine-navbar-nav shine-right">
+            <li class="account">
+        　    <img src="img/user.svg">
+        　  </li>
+            <li class="job"><span>张三</span><span>人力资源部</span><span>HR管理员</span></li>
+            <em class="nav-line"></em>
+            <li id="messages" class="message"> 
+              <span class="msg_email have_email" ui-sref="message"></span> 
+            </li>
+            <em class="nav-line"></em>
+            <li class="logout"><a href="##">登出</a></li>
+          </ul>
+      </div>
+      <div class="leftsidebar_left">
+      <dl class="syetem_management" ui-sref-active="active">
+        <dt><a ui-sref="main">工作台</a></dt>
+      </dl>  
+      <dl class="system_log">
+        <dt><a ui-sref="recruit">招聘管理<span class="caret1"></span></a></dt>
+        <div class="down-wrap">
+          <dd><a ui-sref="publish" ui-sref-active="active">发布招聘岗位</a></dd>
+          <dd><a ui-sref="position" ui-sref-active="active">岗位管理</a></dd>
+          <dd><a ui-sref="template" ui-sref-active="active">岗位模板</a></dd>
+          <dd><a ui-sref="verify" ui-sref-active="active">招聘岗位审核</a></dd>
+        </div>
+      </dl>   
+      <dl class="system_log">
+        <dt><a ui-sref="resume">简历管理<span class="caret1"></span></a></dt>
+        <div class="down-wrap">
+          <dd><a ui-sref="applybuy" ui-sref-active="active">申请购买简历</a></dd>
+          <dd><a ui-sref="buy" ui-sref-active="active">购买简历</a></dd>
+          <dd><a ui-sref="phone" ui-sref-active="active">联系方式获取</a></dd>
+        </div>
+      </dl>
+      <dl class="syetem_management" ui-sref-active="active">
+        <dt><a ui-sref="interview">面试管理</a></dt>
+      </dl>  
+      <dl class="source" ui-sref-active="active">
+        <dt><a ui-sref="point">积分管理</a></dt>
+      </dl>
+      <dl class="source" ui-sref-active="active">
+        <dt><a ui-sref="recommend">一荐倾心</a></dt>
+      </dl>
+      <dl class="source" ui-sref-active="active">
+        <dt><a ui-sref="employees">系统人员管理</a></dt>
+      </dl>
+    </div>
+    </div>
+  </div>
+  <div class="main" ui-view></div>
+  <div class="footer">
+    <p> 阳光保险集团版权所有</p>
+    <p> ©  2017 Sunshine Insurance Group Inc. All Rights Reserved.</p>
+  </div>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+  <script src="lib/angular/dist/angular.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    /*  $(".leftsidebar_left dt").each(function(){
+        if($(this).hasClass("active")){
+          $(this).parent().find('dd').show()
+        }
+      })
+      $(".leftsidebar_left dt").click(function(){
+        $(this).parent().css({"border":"1px solid #ef7d06"})
+        $(this).parent().siblings().css({"border":'none'})
+        $(this).parent().siblings().find("dt").removeClass("active");
+        $(this).addClass("active");
+        $(this).parent().find('dd').slideToggle();
+        $(this).parent().siblings().find('dd').slideUp(); 
+      }); */
+      $(".leftsidebar_left dl").each(function(){
+        if($(this).hasClass("active")){
+          $(this).find('dd').show()
+        }
+      })
+    /*  $(".leftsidebar_left dl").mousemove(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+        $(this).children(".down-wrap").slideDown().mouseleave(function(){
+          $(this).slideUp()
+        })
+      }) */
+      var flag = 1;
+      $(".left-btn").click(function(){
+          if (1 == flag){
+            flag = 0;
+            $(".leftsidebar_left").animate({"margin-left":"-17%"},600)
+          }
+          else{
+            flag = 1;
+            $(".leftsidebar_left").animate({"margin-left":""},600)
+          }
+      })
+    })
+  </script>
+  <script src="lib/angular-messages/angular-messages.js"></script>
+  <script src="lib/zTree/js/jquery.ztree.all.min.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="lib/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+  <script src="lib/moment/moment.js"></script>
+  <script src="lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+  <script src="lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+  <script src="lib/ueditor.config.js"></script>
+  <script src="lib/ueditor.all.js"></script>
+  <script src="lib/angular-ueditor/dist/angular-ueditor.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

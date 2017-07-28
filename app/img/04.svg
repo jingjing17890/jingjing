@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="43px" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>04</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0006 1.42108547e-14 22.265 3.55271368e-15 22.265 22.0738 0.0006 22.0738 0.0006 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台" transform="translate(-618.000000, -371.000000)">
+            <g id="04" transform="translate(618.000000, 371.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="21.5" cy="21.5" r="21.5"></circle>
+                <g id="Page-1" transform="translate(10.000000, 11.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M15.6046,12.3348 C15.6036,10.2858 19.0626,6.8648 19.7536,6.2018 L20.5076,6.9538 C20.9096,7.3558 21.5616,7.3548 21.9626,6.9558 C22.3656,6.5518 22.3656,5.8988 21.9646,5.4978 L16.7676,0.3028 C16.3656,-0.1012 15.7126,-0.1012 15.3116,0.3028 C14.9106,0.7038 14.9106,1.3568 15.3116,1.7578 L16.0426,2.4878 C15.3576,3.1888 11.7536,6.7668 9.9146,6.6378 C7.8766,6.4938 6.7656,9.3548 6.7656,9.3548 L8.9626,11.5558 L0.0006,22.0738 L10.6896,13.2818 L12.8886,15.4808 C12.8886,15.4808 15.6046,14.6118 15.6046,12.3348" id="Fill-1" fill="#EE7900" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
